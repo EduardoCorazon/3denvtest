@@ -1,0 +1,18 @@
+.player{
+    background: red;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 500px;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+}
+.container{
+    background: gray;
+    width: 400px;
+    height: 400px;
+    display: inline-block;
+    overflow: hidden;
+}
