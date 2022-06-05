@@ -18,7 +18,6 @@ function App() {
     let player = document.querySelector('.player');
 
     let playerTop = parseInt(window.getComputedStyle(player).getPropertyValue("top"))
-    let playerDown = parseInt(window.getComputedStyle(player).getPropertyValue("bottom"))
     let playerLeft = parseInt(window.getComputedStyle(player).getPropertyValue("left"))
 
 
