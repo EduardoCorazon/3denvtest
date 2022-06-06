@@ -1,7 +1,10 @@
 //npm run deploy
 import './App.css';
-import React from "react";
-import { Canvas } from "react-three-fiber";
+import React from 'react';
+import { useRef, useState } from 'react'
+import ReactDOM from 'react-dom'
+import { Canvas, useFrame } from '@react-three/fiber'
+
 import { OrbitControls, Stars } from "drei";
 import { Physics, usePlane, useBox } from "use-cannon";
 
