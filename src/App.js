@@ -2,18 +2,16 @@
 
 //Imports
 //Basic things
-import React, { Suspense, useRef } from 'react';
+import React, { Suspense, useEffect, useRef } from 'react';
 import './App.css'
 import * as THREE from "three"
 //React 3 fiber
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
-import { PointerLockControls, Sky, Stars } from "@react-three/drei";
+import { PointerLockControls, Sky, Stars, useLoader } from "@react-three/drei";
 import { Physics, usePlane, useBox } from "@react-three/cannon";
 //Asset Files
 import { Player } from './Assets/3d-main/Player';
-import { Floor } from './Assets/3d-main/Floor'
-
-
+import { Floor } from './Assets/3d-main/Floor';
 
 
 
@@ -51,7 +49,6 @@ function Cube(props) {
 
 
 function App() {
-  
   return (
     <Canvas colorManagement shadows gl={{ alpha: false }} camera={{ fov: 45 }}>
         <PointerLockControls/>
@@ -69,8 +66,6 @@ function App() {
           <Floor/>
           <Cube/>
         </Physics>
-
-
 
         <Box position={[-2,1,0]}/>
         <Box position={[0,2,0]}/>
