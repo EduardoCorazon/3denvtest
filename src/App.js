@@ -9,8 +9,11 @@ import * as THREE from "three"
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { PointerLockControls, Sky, Stars } from "@react-three/drei";
 import { Physics, usePlane, useBox } from "@react-three/cannon";
-import { Player } from './Assets/3d-main/Player';
 //Asset Files
+import { Player } from './Assets/3d-main/Player';
+import { Floor } from './Assets/3d-main/Floor'
+
+
 
 
 
@@ -50,7 +53,7 @@ function Cube(props) {
 function App() {
   
   return (
-    <Canvas colorManagement>
+    <Canvas colorManagement shadows gl={{ alpha: false }} camera={{ fov: 45 }}>
         <PointerLockControls/>
         
         
@@ -61,9 +64,9 @@ function App() {
         <pointLight castShadow intensity={0.8} position={[100, 100, 100]}/>
 
 
-        <Physics gravity={[0, -2,0]}>
+        <Physics gravity={[0, -20,0]}>
           <Player/>
-          <Plane/>
+          <Floor/>
           <Cube/>
         </Physics>
 
@@ -98,3 +101,4 @@ const mytest = ({}) =>{
 }
 
 **/
+

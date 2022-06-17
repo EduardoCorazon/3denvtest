@@ -1,3 +1,5 @@
+//Controls Player Object and Movement
+//had to import due to multiple issues with my own code
 import * as THREE from "three"
 import { useEffect, useRef, useState } from "react"
 import { useSphere } from "@react-three/cannon"
@@ -9,7 +11,6 @@ const moveFieldByKey = (key) => keys[key]
 const direction = new THREE.Vector3()
 const frontVector = new THREE.Vector3()
 const sideVector = new THREE.Vector3()
-const rotation = new THREE.Vector3()
 const speed = new THREE.Vector3()
 
 const usePlayerControls = () => {
