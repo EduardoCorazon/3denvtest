@@ -8,7 +8,8 @@ import * as THREE from "three"
 //React 3 fiber
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { PointerLockControls, Sky, Stars } from "@react-three/drei";
-import { Physics } from "@react-three/cannon";
+import { Physics, usePlane, useBox } from "@react-three/cannon";
+import { Player } from './Assets/3d-main/Player';
 //Asset Files
 
 
@@ -26,11 +27,28 @@ const Box = ({position}) => {
     );
 };
 
+const Plane = ({props}) =>{
+  const [ref] = usePlane(() => ({ rotation: [-Math.PI / 2, 0, 0], ...props }))
+  return (
+    <mesh ref={ref}>
+      <planeGeometry args={[100, 100]} />
+    </mesh>
+  )
+}
 
+function Cube(props) {
+  const [ref] = useBox(() => ({ mass: 1, position: [0, 5, 0], ...props }))
+  return (
+    <mesh ref={ref}>
+      <boxGeometry />
+    </mesh>
+  )
+}
 
 
 
 function App() {
+  
   return (
     <Canvas colorManagement>
         <PointerLockControls/>
@@ -42,6 +60,12 @@ function App() {
         <ambientLight intensity={0.3}/>
         <pointLight castShadow intensity={0.8} position={[100, 100, 100]}/>
 
+
+        <Physics gravity={[0, -2,0]}>
+          <Player/>
+          <Plane/>
+          <Cube/>
+        </Physics>
 
 
 
@@ -55,3 +79,22 @@ function App() {
 }
 
 export default App;
+
+
+
+
+/**Self notes
+function mytest(){
+ return (
+    <mesh ref={ref}>
+      code
+    </mesh>
+  )
+}
+
+IS THE SAME AS 
+const mytest = ({}) =>{
+
+}
+
+**/
