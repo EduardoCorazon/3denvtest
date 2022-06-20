@@ -1,8 +1,8 @@
 {
-  "name": "portfolio",
+  "name": "3denvtest",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://EduardoCorazon.github.io/Portfolio",
+  "homepage": "http://EduardoCorazon.github.io/3denvtest",
   "dependencies": {
     "@react-three/cannon": "^6.3.0",
     "@react-three/drei": "^9.13.2",
